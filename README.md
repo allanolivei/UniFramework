@@ -28,7 +28,7 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * [Allan Oliveira](https://github.com/allanolivei)
 
 ## License
-**Each plugin has its own license, check the links on the 'Contents' section. Stuff I made (UniTween, SmartDebug, etc.) is MIT licensed.**
+**Each plugin has its own license, check the links on the 'Contents' section. Stuff I made (Setters, SmartDebug, etc.) is MIT licensed.**
 
 Copyright 2018 Lucas Sampaio Dias
 
