@@ -1,0 +1,455 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5886119a5c7b34d8872ab527ca3e1b, type: 3}
+  m_Name: UnityBuildSettings
+  m_EditorClassIdentifier: 
+  _basicSettings:
+    baseBuildFolder: C:\Builds
+    buildPath: $PRODUCT_NAME/$RELEASE_TYPE/Build $BUILD/$ARCHITECTURE
+    openFolderPostBuild: 1
+    showNotification: 1
+  _productParameters:
+    buildCounter: 0
+    lastGeneratedVersion: 1.0.1191.2617
+    version: 1.0.$DAYSSINCE("January 1, 2015").$SECONDS
+    autoGenerate: 1
+  _releaseTypeList:
+    releaseTypes:
+    - typeName: Release
+      bundleIndentifier: com.Company.ProductName
+      productName: Product Name
+      developmentBuild: 0
+      allowDebugging: 0
+      enableHeadlessMode: 0
+      customDefines: 
+      sceneList:
+        enabledScenes:
+        - fileGUID: d4d2299166ec94d44a1ceacbd9a38669
+        - fileGUID: 31a5ee6322f51414e95b094cab23207d
+        - fileGUID: 85cdf377a62ae404c872bcfbc2e869a3
+    - typeName: Test
+      bundleIndentifier: com.Company.ProductName
+      productName: Product Name
+      developmentBuild: 0
+      allowDebugging: 0
+      enableHeadlessMode: 0
+      customDefines: 
+      sceneList:
+        enabledScenes:
+        - fileGUID: d4d2299166ec94d44a1ceacbd9a38669
+        - fileGUID: 31a5ee6322f51414e95b094cab23207d
+        - fileGUID: 85cdf377a62ae404c872bcfbc2e869a3
+  _platformList:
+    platforms:
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 25
+        name: Linux Universal
+        enabled: 1
+      - target: 17
+        name: Linux x86
+        enabled: 0
+      - target: 24
+        name: Linux x64
+        enabled: 0
+      variants: []
+      platformName: Linux
+      binaryNameFormat: '{0}.x86'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 1
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 2
+        name: OSX
+        enabled: 1
+      variants: []
+      platformName: OSX
+      binaryNameFormat: '{0}.app'
+      dataDirNameFormat: '{0}.app/Contents'
+      targetGroup: 1
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 5
+        name: Windows x86
+        enabled: 1
+      - target: 19
+        name: Windows x64
+        enabled: 0
+      variants: []
+      platformName: PC
+      binaryNameFormat: '{0}.exe'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 1
+    - enabled: 1
+      distributionList:
+        distributions: []
+      architectures:
+      - target: 13
+        name: Android
+        enabled: 1
+      variants:
+      - type: Device Type
+        name: FAT
+        enabled: 1
+      - type: Device Type
+        name: ARMv7
+        enabled: 0
+      - type: Device Type
+        name: x86
+        enabled: 0
+      - type: Texture Compression
+        name: ETC (Default)
+        enabled: 1
+      - type: Texture Compression
+        name: ETC2
+        enabled: 0
+      - type: Texture Compression
+        name: ASTC
+        enabled: 0
+      - type: Texture Compression
+        name: DXT
+        enabled: 0
+      - type: Texture Compression
+        name: PVRTC
+        enabled: 0
+      - type: Texture Compression
+        name: ATC
+        enabled: 0
+      - type: Texture Compression
+        name: Generic
+        enabled: 0
+      - type: Build System
+        name: Internal (Default)
+        enabled: 1
+      - type: Build System
+        name: Gradle
+        enabled: 0
+      - type: Build System
+        name: ADT (Legacy)
+        enabled: 0
+      platformName: Android
+      binaryNameFormat: '{0}.apk'
+      dataDirNameFormat: '{0}_Data'
+      targetGroup: 7
+  _projectConfigurations:
+    configSet:
+      _Buckets: ffffffff0a0000000d00000003000000ffffffffffffffffffffffff0e000000ffffffffffffffff0600000010000000ffffffff020000000c000000ffffffff0f000000ffffffff0b000000ffffffffffffffffffffffffffffffffffffffffffffffff07000000ffffffffffffffffffffffff05000000ffffffffffffffffffffffff09000000ffffffff11000000ffffffff
+      _HashCodes: cac7e55cfe378756ed43d334ba55b93b77a7aa19510e9f596dcfe55eed64316d2d6dfd48e3f4c9205762525f262b43452d068659d2aa1929e2b9fb3fa624f84c9aad0b186678124c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      _Next: ffffffffffffffffffffffffffffffffffffffff04000000ffffffffffffffffffffffff00000000ffffffff0100000008000000ffffffffffffffffffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      _Count: 18
+      _Version: 18
+      _FreeList: -1
+      _FreeCount: 0
+      _Keys:
+      - Release/Linux/Linux Universal
+      - Release/Linux
+      - Release/OSX/OSX
+      - Release/OSX
+      - Release/PC/Windows x86
+      - Release/PC
+      - Release/Android/Android
+      - Release/Android
+      - Release
+      - Test/Linux/Linux Universal
+      - Test/Linux
+      - Test/OSX/OSX
+      - Test/OSX
+      - Test/PC/Windows x86
+      - Test/PC
+      - Test/Android/Android
+      - Test/Android
+      - Test
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      _Values:
+      - enabled: 0
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/Linux/Linux Universal
+      - enabled: 0
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/OSX/OSX
+      - enabled: 0
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/PC/Windows x86
+      - enabled: 0
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Release/Android/Android
+      - enabled: 1
+        childKeys:
+        - Release/Linux
+        - Release/OSX
+        - Release/PC
+        - Release/Android
+      - enabled: 0
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Test/Linux/Linux Universal
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Test/OSX/OSX
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Test/PC/Windows x86
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys:
+        - Test/Android/Android
+      - enabled: 1
+        childKeys:
+        - Test/Linux
+        - Test/OSX
+        - Test/PC
+        - Test/Android
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+      - enabled: 1
+        childKeys: []
+    showViewOptions: 0
+    showConfigs: 0
+    showBuildInfo: 0
+    hideDisabled: 0
+    treeView: 0
+    selectedKeyChain: Test/Android/Android
+  _preBuildActions:
+    buildActions: []
+  _postBuildActions:
+    buildActions:
+    - {fileID: 114005763593194318}
+    - {fileID: 114923145888998990}
+    - {fileID: 114325976052908998}
+    - {fileID: 114222901667240854}
+    - {fileID: 114599506321947102}
+    - {fileID: 114929440898920148}
+--- !u!114 &114005763593194318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0f7a04940394844a505e73c3eb8cec, type: 3}
+  m_Name: ZipFileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: ZipFileOperation
+  note: Zip builds for WINDOWS, MAC and LINUX
+  actionEnabled: 1
+  filter:
+    condition: 0
+    clauses:
+    - type: 2
+      comparison: 1
+      test: WINDOWS
+    - type: 2
+      comparison: 1
+      test: OSX
+    - type: 2
+      comparison: 1
+      test: LINUX
+  inputPath: $BUILDPATH
+  outputPath: $BUILDPATH
+  outputFileName: $PRODUCT_NAME $RELEASE_TYPE $BUILD ($ARCHITECTURE).zip
+--- !u!114 &114222901667240854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e19aa5315bf4a409c07e84ca8c4248, type: 3}
+  m_Name: FileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FileOperation
+  note: Deletar ini WINDOWS
+  actionEnabled: 0
+  filter:
+    condition: 0
+    clauses:
+    - type: 2
+      comparison: 1
+      test: WINDOWS
+  inputPath: C:\Users\Rodrigo\Documents\Lucas\Games\Unity\Builds\$PRODUCT_NAME\$RELEASE_TYPE\Build
+    $BUILD\$ARCHITECTURE\desktop.ini
+  outputPath: 
+  recursiveSearch: 1
+  operation: 2
+--- !u!114 &114325976052908998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e19aa5315bf4a409c07e84ca8c4248, type: 3}
+  m_Name: FileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FileOperation
+  note: Delete exe WINDOWS
+  actionEnabled: 1
+  filter:
+    condition: 0
+    clauses:
+    - type: 2
+      comparison: 1
+      test: WINDOWS
+  inputPath: $BUILDPATH\$PRODUCT_NAME.exe
+  outputPath: 
+  recursiveSearch: 1
+  operation: 2
+--- !u!114 &114599506321947102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e19aa5315bf4a409c07e84ca8c4248, type: 3}
+  m_Name: FileOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FileOperation
+  note: Delete dll UnityPlayer.dll Windows
+  actionEnabled: 1
+  filter:
+    condition: 0
+    clauses:
+    - type: 2
+      comparison: 1
+      test: WINDOWS
+  inputPath: $BUILDPATH\UnityPlayer.dll
+  outputPath: 
+  recursiveSearch: 1
+  operation: 2
+--- !u!114 &114923145888998990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
+  m_Name: FolderOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FolderOperation
+  note: Delete .app MAC
+  actionEnabled: 1
+  filter:
+    condition: 0
+    clauses:
+    - type: 2
+      comparison: 1
+      test: OSX
+  inputPath: $BUILDPATH\$PRODUCT_NAME.app
+  outputPath: 
+  operation: 2
+--- !u!114 &114929440898920148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54626104f6c7de94f9976e1672abc45b, type: 3}
+  m_Name: FolderOperation
+  m_EditorClassIdentifier: 
+  actionType: 1
+  actionName: FolderOperation
+  note: Delete Data Windows
+  actionEnabled: 1
+  filter:
+    condition: 0
+    clauses:
+    - type: 2
+      comparison: 1
+      test: WINDOWS
+  inputPath: $BUILDPATH\$PRODUCT_NAME_Data
+  outputPath: 
+  operation: 2
