@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour {
+public class LoadScene : MonoBehaviour
+{
 
-	public void Load(int sceneIndex)
+    public void LoadWithProgressBar(int sceneIndex)
+    {
+        LoadSceneWithProgressBar.sceneIndex = sceneIndex;
+        Load("LoadScene");
+    }
+
+    public void Load(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
