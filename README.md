@@ -22,6 +22,7 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * [TextMesh Pro](https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126) by Unity Technologies
 * [RainbowFolders](https://github.com/PhannGor/unity3d-rainbow-folders) by [PhannGor](https://github.com/PhannGor)
 * [SuperUnityBuild](https://github.com/Chaser324/unity-build) by [Chaser324](https://github.com/Chaser324)
+* [ExtendedTransform](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor) by [bradsc0tt](https://github.com/bradsc0tt/)
 
 ## Special Thanks
 * [Paullo Cesar "PC"](https://github.com/paullocesarpc)
