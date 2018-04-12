@@ -9,6 +9,7 @@ public class LoadSceneWithProgressBar : MonoBehaviour
     public Image imageToFill;
     public AudioListener audioListener;
     public float delayToStartLoading = .5f;
+    public float delayToOpenLoadedScene = .25f;
     public bool fakeProgress = true;
     public float fakeProgressRate = 2f;
     public static int sceneIndex;
@@ -68,6 +69,8 @@ public class LoadSceneWithProgressBar : MonoBehaviour
 
             yield return null;
         }
+
+        yield return new WaitForSecondsRealtime(delayToOpenLoadedScene);
 
         Time.timeScale = 1;
         DOTween.timeScale = 1;
