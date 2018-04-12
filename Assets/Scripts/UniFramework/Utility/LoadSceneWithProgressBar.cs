@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class LoadSceneWithProgressBar : MonoBehaviour
     public float delayToOpenLoadedScene = .25f;
     public bool fakeProgress = true;
     public float fakeProgressRate = 2f;
+    public UnityEvent operationDone;
     public static int sceneIndex;
 
     private float percent = 0;
@@ -70,6 +72,7 @@ public class LoadSceneWithProgressBar : MonoBehaviour
             yield return null;
         }
 
+        operationDone.Invoke();
         yield return new WaitForSecondsRealtime(delayToOpenLoadedScene);
 
         Time.timeScale = 1;
