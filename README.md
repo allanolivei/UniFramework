@@ -9,21 +9,21 @@ Download the latest .unitypackage file [from the Packages folder](https://github
 * Scripting Runtime .NET 4.x or higher
 * Unity 2017.3 or higher (older versions might work but were not fully tested)
 
-Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) (bonus features for GameEvent, additional Setters and better inspectors) and UniTween is recommended (but not required).
+Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) (UniExplorer, bonus features for GameEvent, additional Setters and better inspectors) and UniTween is recommended (but not required).
 
 ## Contents
 * SmartDebug
 * ScriptableVariable system with component setters (improved from [Unite Austin 2017 - Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk))
 * GameEvent (improved from [Unite Austin 2017 - Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk))
-* UniExplorer and GameEventListener Explorer (requires Odin)
+* UniExplorer and GameEventListener Explorer (requires [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041))
 * UIScreen system by [Allan Oliveira](https://github.com/allanolivei) and me
 * Utility Scripts (ObjectPool, Mathfx, AtlasGenerator, etc.) by [Allan Oliveira](https://github.com/allanolivei)
-* [DOTween](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416) by Demigiant
-* [TextMesh Pro](https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126) by Unity Technologies
+* [DOTween](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416) by [Demigiant](http://www.demigiant.com/)
+* [TextMesh Pro](https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126) by [Unity Technologies](https://unity3d.com/)
 * [RainbowFolders](https://github.com/PhannGor/unity3d-rainbow-folders) by [PhannGor](https://github.com/PhannGor)
 * [SuperUnityBuild](https://github.com/Chaser324/unity-build) by [Chaser324](https://github.com/Chaser324)
 * [ExtendedTransform](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor) by [bradsc0tt](https://github.com/bradsc0tt/)
-* [Extension Methods for Unity](https://assetstore.unity.com/packages/tools/utilities/extension-methods-for-unity-24876) by ROCKET GAMES and a few additions by me
+* [Extension Methods for Unity](https://assetstore.unity.com/packages/tools/utilities/extension-methods-for-unity-24876) by [ROCKET GAMES](https://assetstore.unity.com/publishers/2191) and a few additions by me
 
 ## Special Thanks
 * [Paullo Cesar "PC"](https://github.com/paullocesarpc)
