@@ -4,7 +4,7 @@
     using UniFramework.Variables;
     using UnityEngine;
 
-    public class KeyboardMover : MonoBehaviour
+    public class MoveOnKeyboard : MonoBehaviour
     {
         [Serializable]
         public class MoveAxis
