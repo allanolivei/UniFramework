@@ -1,6 +1,8 @@
 {
     "name": "UniFramework-Assembly",
-    "references": [],
+    "references": [
+        "ExtensionMethods"
+    ],
     "includePlatforms": [],
     "excludePlatforms": []
 }

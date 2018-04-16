@@ -23,6 +23,7 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * [RainbowFolders](https://github.com/PhannGor/unity3d-rainbow-folders) by [PhannGor](https://github.com/PhannGor)
 * [SuperUnityBuild](https://github.com/Chaser324/unity-build) by [Chaser324](https://github.com/Chaser324)
 * [ExtendedTransform](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor) by [bradsc0tt](https://github.com/bradsc0tt/)
+* [Extension Methods for Unity](https://assetstore.unity.com/packages/tools/utilities/extension-methods-for-unity-24876) by ROCKET GAMES and a few additions by me
 
 ## Special Thanks
 * [Paullo Cesar "PC"](https://github.com/paullocesarpc)
