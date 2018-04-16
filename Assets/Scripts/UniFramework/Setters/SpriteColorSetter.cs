@@ -1,13 +1,18 @@
-﻿using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/2D and 3D/Sprite Color Setter")]
-public class SpriteColorSetter : Setter {
-
-    public ColorReference newColor;
-    public SpriteRenderer spriteRenderer;
-
-    public override void Set()
+    [AddComponentMenu("Setter/2D and 3D/Sprite Color Setter")]
+    public class SpriteColorSetter : Setter
     {
-        spriteRenderer.color = newColor.Value;
+
+        public ColorReference newColor;
+        public SpriteRenderer spriteRenderer;
+
+        public override void Set()
+        {
+            spriteRenderer.color = newColor.Value;
+        }
     }
 }

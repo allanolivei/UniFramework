@@ -1,29 +1,32 @@
-﻿using System;
-using UnityEngine;
-
-[Serializable]
-public class Vector3Reference
+﻿namespace UniFramework.Variables
 {
-    public bool UseConstant = true;
-    public Vector3 ConstantValue;
-    public Vector3Variable Variable;
+    using System;
+    using UnityEngine;
 
-    public Vector3Reference()
-    { }
-
-    public Vector3Reference(Vector3 value)
+    [Serializable]
+    public class Vector3Reference
     {
-        UseConstant = true;
-        ConstantValue = value;
-    }
+        public bool UseConstant = true;
+        public Vector3 ConstantValue;
+        public Vector3Variable Variable;
 
-    public Vector3 Value
-    {
-        get { return UseConstant ? ConstantValue : Variable.value; }
-    }
+        public Vector3Reference()
+        { }
 
-    public static implicit operator Vector3(Vector3Reference reference)
-    {
-        return reference.Value;
+        public Vector3Reference(Vector3 value)
+        {
+            UseConstant = true;
+            ConstantValue = value;
+        }
+
+        public Vector3 Value
+        {
+            get { return UseConstant ? ConstantValue : Variable.Value; }
+        }
+
+        public static implicit operator Vector3(Vector3Reference reference)
+        {
+            return reference.Value;
+        }
     }
 }

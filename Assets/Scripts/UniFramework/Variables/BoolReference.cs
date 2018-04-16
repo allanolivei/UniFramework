@@ -1,28 +1,31 @@
-﻿using System;
-
-[Serializable]
-public class BoolReference
+﻿namespace UniFramework.Variables
 {
-    public bool UseConstant = true;
-    public bool ConstantValue;
-    public BoolVariable Variable;
+    using System;
 
-    public BoolReference()
-    { }
-
-    public BoolReference(bool value)
+    [Serializable]
+    public class BoolReference
     {
-        UseConstant = true;
-        ConstantValue = value;
-    }
+        public bool UseConstant = true;
+        public bool ConstantValue;
+        public BoolVariable Variable;
 
-    public bool Value
-    {
-        get { return UseConstant ? ConstantValue : Variable.value; }
-    }
+        public BoolReference()
+        { }
 
-    public static implicit operator bool(BoolReference reference)
-    {
-        return reference.Value;
+        public BoolReference(bool value)
+        {
+            UseConstant = true;
+            ConstantValue = value;
+        }
+
+        public bool Value
+        {
+            get { return UseConstant ? ConstantValue : Variable.Value; }
+        }
+
+        public static implicit operator bool(BoolReference reference)
+        {
+            return reference.Value;
+        }
     }
 }

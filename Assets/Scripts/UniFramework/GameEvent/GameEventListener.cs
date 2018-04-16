@@ -1,36 +1,39 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
-
-public class GameEventListener : MonoBehaviour
+﻿namespace UniFramework.GameEvent
 {
-    [Tooltip("Event to register with.")]
-    public GameEvent Event;
+    using UnityEngine;
+    using UnityEngine.Events;
 
-    [Tooltip("Response to invoke when Event is raised.")]
-    public UnityEvent Response;
-
-    private void OnEnable()
+    public class GameEventListener : MonoBehaviour
     {
-        Event.AddListener(this);
-    }
+        [Tooltip("Event to register with.")]
+        public GameEvent Event;
 
-    private void OnDisable()
-    {
-        Event.RemoveListener(this);
-    }
+        [Tooltip("Response to invoke when Event is raised.")]
+        public UnityEvent Response;
 
-    public void OnEventRaised()
-    {
-        Response.Invoke();
-    }
+        private void OnEnable()
+        {
+            Event.AddListener(this);
+        }
+
+        private void OnDisable()
+        {
+            Event.RemoveListener(this);
+        }
+
+        public void OnEventRaised()
+        {
+            Response.Invoke();
+        }
 
 #if ODIN_INSPECTOR
-    private string GetButtonName { get { return "Invoke " + Event?.name; } }
+        private string GetButtonName { get { return "Invoke " + Event?.name; } }
 
-    [Sirenix.OdinInspector.Button("$GetButtonName", Sirenix.OdinInspector.ButtonSizes.Large)]
-    public void Invoke()
-    {
-        Event.Invoke();
-    }
+        [Sirenix.OdinInspector.Button("$GetButtonName", Sirenix.OdinInspector.ButtonSizes.Large)]
+        public void Invoke()
+        {
+            Event.Invoke();
+        }
 #endif
+    }
 }

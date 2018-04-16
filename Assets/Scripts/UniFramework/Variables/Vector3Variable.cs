@@ -1,30 +1,33 @@
-﻿using UnityEngine;
-
-[CreateAssetMenu(fileName = "Vector3", menuName = "Variables/Vector3")]
-public class Vector3Variable : ScriptableVariable
+﻿namespace UniFramework.Variables
 {
+    using UnityEngine;
 
-    public Vector3 value;
-
-    public override dynamic DynamicGet()
+    [CreateAssetMenu(fileName = "Vector3", menuName = "Variables/Vector3")]
+    public class Vector3Variable : ScriptableVariable
     {
-        return value;
-    }
 
-    public override void DynamicSet(dynamic newValue)
-    {
-        try
+        public Vector3 Value;
+
+        public override dynamic DynamicGet()
         {
-            SetValue(newValue);
+            return Value;
         }
-        catch (System.Exception)
-        {
-            throw;
-        }
-    }
 
-    public void SetValue(Vector3 newValue)
-    {
-        value = newValue;
+        public override void DynamicSet(dynamic newValue)
+        {
+            try
+            {
+                SetValue(newValue);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public void SetValue(Vector3 newValue)
+        {
+            Value = newValue;
+        }
     }
 }

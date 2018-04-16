@@ -1,29 +1,32 @@
-﻿using System;
-using UnityEngine;
-
-[Serializable]
-public class ColorReference
+﻿namespace UniFramework.Variables
 {
-    public bool UseConstant = true;
-    public Color ConstantValue;
-    public ColorVariable Variable;
+    using System;
+    using UnityEngine;
 
-    public ColorReference()
-    { }
-
-    public ColorReference(Color value)
+    [Serializable]
+    public class ColorReference
     {
-        UseConstant = true;
-        ConstantValue = value;
-    }
+        public bool UseConstant = true;
+        public Color ConstantValue;
+        public ColorVariable Variable;
 
-    public Color Value
-    {
-        get { return UseConstant ? ConstantValue : Variable.value; }
-    }
+        public ColorReference()
+        { }
 
-    public static implicit operator Color(ColorReference reference)
-    {
-        return reference.Value;
+        public ColorReference(Color value)
+        {
+            UseConstant = true;
+            ConstantValue = value;
+        }
+
+        public Color Value
+        {
+            get { return UseConstant ? ConstantValue : Variable.Value; }
+        }
+
+        public static implicit operator Color(ColorReference reference)
+        {
+            return reference.Value;
+        }
     }
 }

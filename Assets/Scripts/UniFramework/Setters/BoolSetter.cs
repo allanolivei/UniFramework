@@ -1,12 +1,17 @@
-﻿using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/Variables/Bool Setter")]
-public class BoolSetter : Setter {
-    public BoolReference newValue;
-    public BoolVariable variable;
-
-    public override void Set()
+    [AddComponentMenu("Setter/Variables/Bool Setter")]
+    public class BoolSetter : Setter
     {
-        variable.SetValue(newValue.Value);
+        public BoolReference newValue;
+        public BoolVariable variable;
+
+        public override void Set()
+        {
+            variable.SetValue(newValue.Value);
+        }
     }
 }

@@ -1,31 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[CreateAssetMenu(fileName = "Bool", menuName = "Variables/Bool")]
-public class BoolVariable : ScriptableVariable
+﻿namespace UniFramework.Variables
 {
-    public bool value;
+    using UnityEngine;
 
-    public override dynamic DynamicGet()
+    [CreateAssetMenu(fileName = "Bool", menuName = "Variables/Bool")]
+    public class BoolVariable : ScriptableVariable
     {
-        return value;
-    }
+        public bool Value;
 
-    public override void DynamicSet(dynamic newValue)
-    {
-        try
+        public override dynamic DynamicGet()
         {
-            SetValue(newValue);
+            return Value;
         }
-        catch (System.Exception)
-        {
-            throw;
-        }
-    }
 
-    public void SetValue(bool newValue)
-    {
-        value = newValue;
+        public override void DynamicSet(dynamic newValue)
+        {
+            try
+            {
+                SetValue(newValue);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public void SetValue(bool newValue)
+        {
+            Value = newValue;
+        }
     }
 }

@@ -1,28 +1,32 @@
-﻿using TMPro;
-using UnityEngine;
-
-[AddComponentMenu("Setter/2D and 3D/TextMesh Setter")]
-public class TextMesh3DSetter : Setter
+﻿namespace UniFramework.Setters
 {
+    using TMPro;
+    using UniFramework.Variables;
+    using UnityEngine;
 
-    public ScriptableVariable variable;
-    public TextMeshPro text;
-    public string format;
-
-    public override void Set()
+    [AddComponentMenu("Setter/2D and 3D/TextMesh Setter")]
+    public class TextMesh3DSetter : Setter
     {
-        if (variable.GetType().ToString() != "StringVariable")
+
+        public ScriptableVariable variable;
+        public TextMeshPro text;
+        public string format;
+
+        public override void Set()
         {
-            try
+            if (variable.GetType().ToString() != "StringVariable")
             {
-                text.SetText(variable.DynamicGet().ToString(format));
+                try
+                {
+                    text.SetText(variable.DynamicGet().ToString(format));
+                }
+                catch (System.Exception)
+                {
+                    text.SetText(variable.DynamicGet().ToString());
+                }
             }
-            catch (System.Exception)
-            {
-                text.SetText(variable.DynamicGet().ToString());
-            }
+            else
+                text.SetText(variable.DynamicGet());
         }
-        else
-            text.SetText(variable.DynamicGet());
     }
 }

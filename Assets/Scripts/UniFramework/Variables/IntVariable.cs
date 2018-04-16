@@ -1,52 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿namespace UniFramework.Variables
+{
+    using UnityEngine;
 
-
-[CreateAssetMenu(fileName = "Int", menuName = "Variables/Int")]
-public class IntVariable : ScriptableVariable {
-
-    public int value;
-
-    public override dynamic DynamicGet()
+    [CreateAssetMenu(fileName = "Int", menuName = "Variables/Int")]
+    public class IntVariable : ScriptableVariable
     {
-        return value;
-    }
 
-    public override void DynamicSet(dynamic newValue)
-    {
-        try
+        public int Value;
+
+        public override dynamic DynamicGet()
         {
-            SetValue(newValue);
+            return Value;
         }
-        catch (System.Exception)
+
+        public override void DynamicSet(dynamic newValue)
         {
-            throw;
+            try
+            {
+                SetValue(newValue);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
-    }
 
-    public void SetValue(int newValue)
-    {
-        value = newValue;
-    }
+        public void SetValue(int newValue)
+        {
+            Value = newValue;
+        }
 
-    public void Add(int x)
-    {
-        value += x;
-    }
+        public void Add(int x)
+        {
+            Value += x;
+        }
 
-    public void Subtract(int x)
-    {
-        value -= x;
-    }
+        public void Subtract(int x)
+        {
+            Value -= x;
+        }
 
-    public void Multiply(int x)
-    {
-        value *= x;
-    }
+        public void Multiply(int x)
+        {
+            Value *= x;
+        }
 
-    public void Divide(int x)
-    {
-        value /= x;
+        public void Divide(int x)
+        {
+            Value /= x;
+        }
     }
 }

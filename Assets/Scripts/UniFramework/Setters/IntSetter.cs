@@ -1,13 +1,18 @@
-﻿using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/Variables/Int Setter")]
-public class IntSetter : Setter {
-
-    public IntReference newValue;
-    public IntVariable variable;
-
-    public override void Set()
+    [AddComponentMenu("Setter/Variables/Int Setter")]
+    public class IntSetter : Setter
     {
-        variable.SetValue(newValue.Value);
+
+        public IntReference newValue;
+        public IntVariable variable;
+
+        public override void Set()
+        {
+            variable.SetValue(newValue.Value);
+        }
     }
 }

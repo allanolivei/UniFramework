@@ -1,13 +1,18 @@
-﻿using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/Transform/Position Setter")]
-public class PositionSetter : Setter {
-
-    public Vector3Reference newPosition;
-    public Transform target;
-
-    public override void Set()
+    [AddComponentMenu("Setter/Transform/Position Setter")]
+    public class PositionSetter : Setter
     {
-        target.position = newPosition.Value;
+
+        public Vector3Reference newPosition;
+        public Transform target;
+
+        public override void Set()
+        {
+            target.position = newPosition.Value;
+        }
     }
 }

@@ -1,71 +1,75 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
+﻿namespace UniFramework.Utility
+{
+    using UnityEngine;
+    using UnityEngine.Events;
+    using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class MoveOnMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
-
-    public UnityEvent MouseDownEvent;
-    public UnityEvent MouseUpEvent;
-
-    private Rigidbody2D rb;
-    private Vector2 savedPos;
-    private Vector3 distanceMouseObj;
-    private bool isDragging;
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class MoveOnMouse : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Vector3 destination = Input.mousePosition;
-        destination.z = Mathf.Abs(Camera.main.gameObject.transform.position.z);
-        distanceMouseObj = transform.position - (Camera.main.ScreenToWorldPoint(destination));
-        StartControl();
-    }
+        public UnityEvent MouseDownEvent;
+        public UnityEvent MouseUpEvent;
 
-    private void Update()
-    {
-        if (isDragging)
+        private Rigidbody2D rb;
+        private Vector2 savedPos;
+        private Vector3 distanceMouseObj;
+        private bool isDragging;
+
+        private void Awake()
         {
-            savedPos = GetNewPos();
-            rb.MovePosition(savedPos);
+            rb = GetComponent<Rigidbody2D>();
         }
-    }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        StopControl();
-    }
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            Vector3 destination = Input.mousePosition;
+            destination.z = Mathf.Abs(Camera.main.gameObject.transform.position.z);
+            distanceMouseObj = transform.position - (Camera.main.ScreenToWorldPoint(destination));
+            StartControl();
+        }
 
-    public bool IsDragging()
-    {
-        return isDragging;
-    }
+        private void Update()
+        {
+            if (isDragging)
+            {
+                savedPos = GetNewPos();
+                rb.MovePosition(savedPos);
+            }
+        }
 
-    public void StartControl()
-    {
-        isDragging = true;
-        MouseDownEvent.Invoke();
-    }
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            StopControl();
+        }
 
-    public void StopControl()
-    {
-        isDragging = false;
-        MouseUpEvent.Invoke();
-    }
+        public bool IsDragging()
+        {
+            return isDragging;
+        }
 
-    private void OnDisable()
-    {
-        isDragging = false;
-    }
+        public void StartControl()
+        {
+            isDragging = true;
+            MouseDownEvent.Invoke();
+        }
 
-    private Vector2 GetNewPos()
-    {
-        Vector3 destination = Input.mousePosition;
-        destination.z = Mathf.Abs(Camera.main.gameObject.transform.position.z);
-        return Camera.main.ScreenToWorldPoint(destination) + distanceMouseObj;
+        public void StopControl()
+        {
+            isDragging = false;
+            MouseUpEvent.Invoke();
+        }
+
+        private void OnDisable()
+        {
+            isDragging = false;
+        }
+
+        private Vector2 GetNewPos()
+        {
+            Vector3 destination = Input.mousePosition;
+            destination.z = Mathf.Abs(Camera.main.gameObject.transform.position.z);
+            return Camera.main.ScreenToWorldPoint(destination) + distanceMouseObj;
+        }
     }
 }

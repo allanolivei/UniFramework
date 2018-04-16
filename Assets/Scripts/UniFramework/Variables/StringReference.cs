@@ -1,28 +1,31 @@
-﻿using System;
-
-[Serializable]
-public class StringReference
+﻿namespace UniFramework.Variables
 {
-    public bool UseConstant = true;
-    public string ConstantValue;
-    public StringVariable Variable;
+    using System;
 
-    public StringReference()
-    { }
-
-    public StringReference(string value)
+    [Serializable]
+    public class StringReference
     {
-        UseConstant = true;
-        ConstantValue = value;
-    }
+        public bool UseConstant = true;
+        public string ConstantValue;
+        public StringVariable Variable;
 
-    public string Value
-    {
-        get { return UseConstant ? ConstantValue : Variable.value; }
-    }
+        public StringReference()
+        { }
 
-    public static implicit operator string(StringReference reference)
-    {
-        return reference.Value;
+        public StringReference(string value)
+        {
+            UseConstant = true;
+            ConstantValue = value;
+        }
+
+        public string Value
+        {
+            get { return UseConstant ? ConstantValue : Variable.Value; }
+        }
+
+        public static implicit operator string(StringReference reference)
+        {
+            return reference.Value;
+        }
     }
 }

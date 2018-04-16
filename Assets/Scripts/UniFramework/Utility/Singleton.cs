@@ -1,87 +1,89 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
-public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+﻿namespace UniFramework.Utility
 {
-    protected static T _instance;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
 
-    public static bool HasInstance()
+    public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        return _instance != null && !applicationIsQuitting;
-    }
+        protected static T _instance;
 
-    public static T GetInstance()
-    {
-        if (applicationIsQuitting)
+        public static bool HasInstance()
         {
-            Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
-                "' already destroyed on application quit." +
-                " Won't create again - returning null.");
-
-            throw new System.Exception("Tentativa de acesso ao (singleton)"+ typeof(T) + " com a cena descarregada!");
+            return _instance != null && !applicationIsQuitting;
         }
 
-        if (_instance == null)
+        public static T GetInstance()
         {
-            _instance = (T)FindObjectOfType(typeof(T));
+            if (applicationIsQuitting)
+            {
+                Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
+                    "' already destroyed on application quit." +
+                    " Won't create again - returning null.");
+
+                throw new System.Exception("Tentativa de acesso ao (singleton)" + typeof(T) + " com a cena descarregada!");
+            }
+
+            if (_instance == null)
+            {
+                _instance = (T)FindObjectOfType(typeof(T));
 
 #if UNITY_EDITOR
-            if (FindObjectsOfType(typeof(T)).Length > 1)
-            {
-                Debug.LogError("[Singleton] Something went really wrong " +
-                    " - there should never be more than 1 singleton!" +
-                    " Reopening the scene might fix it.");
-                return _instance;
-            }
+                if (FindObjectsOfType(typeof(T)).Length > 1)
+                {
+                    Debug.LogError("[Singleton] Something went really wrong " +
+                        " - there should never be more than 1 singleton!" +
+                        " Reopening the scene might fix it.");
+                    return _instance;
+                }
 #endif
 
-            if ( _instance == null )
+                if (_instance == null)
+                {
+                    GameObject singleton = new GameObject();
+                    _instance = singleton.AddComponent<T>();
+                    singleton.name = "(singleton) " + typeof(T).ToString();
+                    Debug.Log("[Singleton] Uma nova instancia do (Singleton)" + typeof(T) + " foi requisitada na cena.");
+                }
+            }
+
+            return _instance;
+        }
+
+        protected static bool applicationIsQuitting = false;
+        protected bool allowGhost = false;
+
+
+        protected virtual void Awake()
+        {
+            if (_instance != null && _instance != this)
             {
-                GameObject singleton = new GameObject();
-                _instance = singleton.AddComponent<T>();
-                singleton.name = "(singleton) " + typeof(T).ToString();
-                Debug.Log("[Singleton] Uma nova instancia do (Singleton)" + typeof(T) + " foi requisitada na cena.");
+                Destroy(this);
+                return;
+            }
+
+            _instance = (this as T);
+
+            if (!this.allowGhost)
+            {
+                DontDestroyOnLoad(gameObject);
+                SceneManager.sceneUnloaded += SceneUnload;
             }
         }
 
-        return _instance;
-    }
-
-    protected static bool applicationIsQuitting = false;
-    protected bool allowGhost = false;
-
-
-    protected virtual void Awake()
-    {
-        if (_instance != null && _instance != this)
+        protected virtual void OnDestroy()
         {
-            Destroy(this);
-            return;
+            if (!this.allowGhost)
+                SceneManager.sceneUnloaded -= SceneUnload;
         }
 
-        _instance = (this as T);
-        
-        if( !this.allowGhost )
+        protected virtual void OnApplicationQuit()
         {
-            DontDestroyOnLoad(gameObject);
-            SceneManager.sceneUnloaded += SceneUnload;
+            applicationIsQuitting = true;
         }
-    }
 
-    protected virtual void OnDestroy()
-    {
-        if( !this.allowGhost )
-            SceneManager.sceneUnloaded -= SceneUnload;
-    }
-
-    protected virtual void OnApplicationQuit()
-    {
-        applicationIsQuitting = true;
-    }
-
-    protected virtual void SceneUnload( Scene scene )
-    {
-        DestroyImmediate(gameObject);
+        protected virtual void SceneUnload(Scene scene)
+        {
+            DestroyImmediate(gameObject);
+        }
     }
 }

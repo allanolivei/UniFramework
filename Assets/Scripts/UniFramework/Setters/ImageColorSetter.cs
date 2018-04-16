@@ -1,14 +1,19 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
+    using UnityEngine.UI;
 
-[AddComponentMenu("Setter/UI/Image Color Setter")]
-public class ImageColorSetter : Setter {
-
-    public ColorReference newColor;
-    public Image image;
-
-    public override void Set()
+    [AddComponentMenu("Setter/UI/Image Color Setter")]
+    public class ImageColorSetter : Setter
     {
-        image.color = newColor.Value;
+
+        public ColorReference newColor;
+        public Image image;
+
+        public override void Set()
+        {
+            image.color = newColor.Value;
+        }
     }
 }

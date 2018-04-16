@@ -1,30 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿namespace UniFramework.Variables
+{
+    using UnityEngine;
 
-[CreateAssetMenu(fileName = "String", menuName = "Variables/String")]
-public class StringVariable : ScriptableVariable {
-    public string value;
-
-    public override dynamic DynamicGet()
+    [CreateAssetMenu(fileName = "String", menuName = "Variables/String")]
+    public class StringVariable : ScriptableVariable
     {
-        return value;
-    }
+        public string Value;
 
-    public override void DynamicSet(dynamic newValue)
-    {
-        try
+        public override dynamic DynamicGet()
         {
-            SetValue(newValue);
+            return Value;
         }
-        catch (System.Exception)
-        {
-            throw;
-        }        
-    }
 
-    public void SetValue(string newValue)
-    {
-        value = newValue;
+        public override void DynamicSet(dynamic newValue)
+        {
+            try
+            {
+                SetValue(newValue);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+        }
+
+        public void SetValue(string newValue)
+        {
+            Value = newValue;
+        }
     }
 }

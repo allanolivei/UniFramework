@@ -1,51 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿namespace UniFramework.Variables
+{
+    using UnityEngine;
 
-[CreateAssetMenu(fileName = "Float", menuName = "Variables/Float")]
-public class FloatVariable : ScriptableVariable {
-
-    public float value;
-
-    public override dynamic DynamicGet()
+    [CreateAssetMenu(fileName = "Float", menuName = "Variables/Float")]
+    public class FloatVariable : ScriptableVariable
     {
-        return value;
-    }
 
-    public override void DynamicSet(dynamic newValue)
-    {
-        try
+        public float Value;
+
+        public override dynamic DynamicGet()
         {
-            SetValue(newValue);
+            return Value;
         }
-        catch (System.Exception)
+
+        public override void DynamicSet(dynamic newValue)
         {
-            throw;
+            try
+            {
+                SetValue(newValue);
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
-    }
 
-    public void SetValue(float newValue)
-    {
-        value = newValue;
-    }
+        public void SetValue(float newValue)
+        {
+            Value = newValue;
+        }
 
-    public void Add(float x)
-    {
-        value += x;
-    }
+        public void Add(float x)
+        {
+            Value += x;
+        }
 
-    public void Subtract(float x)
-    {
-        value -= x;
-    }
+        public void Subtract(float x)
+        {
+            Value -= x;
+        }
 
-    public void Multiply(float x)
-    {
-        value *= x;
-    }
+        public void Multiply(float x)
+        {
+            Value *= x;
+        }
 
-    public void Divide(float x)
-    {
-        value /= x;
+        public void Divide(float x)
+        {
+            Value /= x;
+        }
     }
 }

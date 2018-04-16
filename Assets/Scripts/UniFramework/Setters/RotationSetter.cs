@@ -1,13 +1,18 @@
-﻿using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/Transform/Rotation Setter")]
-public class RotationSetter : Setter {
-
-    public Vector3Reference newRotation;
-    public Transform target;
-
-    public override void Set()
+    [AddComponentMenu("Setter/Transform/Rotation Setter")]
+    public class RotationSetter : Setter
     {
-        target.localEulerAngles = newRotation.Value;
+
+        public Vector3Reference newRotation;
+        public Transform target;
+
+        public override void Set()
+        {
+            target.localEulerAngles = newRotation.Value;
+        }
     }
 }

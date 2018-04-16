@@ -1,13 +1,18 @@
-﻿using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/Transform/Scale Setter")]
-public class ScaleSetter : Setter {
-
-    public Vector3Reference newScale;
-    public Transform target;
-
-    public override void Set()
+    [AddComponentMenu("Setter/Transform/Scale Setter")]
+    public class ScaleSetter : Setter
     {
-        target.localScale = newScale.Value;
+
+        public Vector3Reference newScale;
+        public Transform target;
+
+        public override void Set()
+        {
+            target.localScale = newScale.Value;
+        }
     }
 }

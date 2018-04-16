@@ -1,22 +1,25 @@
-﻿#if UNITY_EDITOR
-#if !ODIN_INSPECTOR
-using UnityEditor;
-
-using UnityEngine;
-
-[CustomEditor(typeof(GameEvent))]
-public class EventEditor : Editor
+﻿namespace UniFramework.GameEvent
 {
-    public override void OnInspectorGUI()
+#if UNITY_EDITOR
+#if !ODIN_INSPECTOR
+    using UnityEditor;
+
+    using UnityEngine;
+
+    [CustomEditor(typeof(GameEvent))]
+    public class EventEditor : Editor
     {
-        base.OnInspectorGUI();
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
 
-        GUI.enabled = Application.isPlaying;
+            GUI.enabled = Application.isPlaying;
 
-        GameEvent e = target as GameEvent;
-        if (GUILayout.Button("Invoke"))
-            e.Invoke();
+            GameEvent e = target as GameEvent;
+            if (GUILayout.Button("Invoke"))
+                e.Invoke();
+        }
     }
+#endif
+#endif
 }
-#endif
-#endif

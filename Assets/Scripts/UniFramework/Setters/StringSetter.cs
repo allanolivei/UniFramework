@@ -1,13 +1,18 @@
-﻿using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/Variables/String Setter")]
-public class StringSetter : Setter {
-
-    public StringReference newValue;
-    public StringVariable variable;
-
-    public override void Set()
+    [AddComponentMenu("Setter/Variables/String Setter")]
+    public class StringSetter : Setter
     {
-        variable.SetValue(newValue.Value);
+
+        public StringReference newValue;
+        public StringVariable variable;
+
+        public override void Set()
+        {
+            variable.SetValue(newValue.Value);
+        }
     }
 }

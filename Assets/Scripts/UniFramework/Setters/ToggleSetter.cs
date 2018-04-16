@@ -1,14 +1,19 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿namespace UniFramework.Setters
+{
+    using UniFramework.Variables;
+    using UnityEngine;
+    using UnityEngine.UI;
 
-[AddComponentMenu("Setter/UI/Toggle Setter")]
-public class ToggleSetter : Setter {
-
-    public Toggle toggle;
-    public BoolReference isOn;
-
-    public override void Set()
+    [AddComponentMenu("Setter/UI/Toggle Setter")]
+    public class ToggleSetter : Setter
     {
-        toggle.isOn = isOn.Value;
+
+        public Toggle toggle;
+        public BoolReference isOn;
+
+        public override void Set()
+        {
+            toggle.isOn = isOn.Value;
+        }
     }
 }

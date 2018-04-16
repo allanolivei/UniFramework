@@ -1,26 +1,29 @@
-﻿using UnityEngine;
-
-public static class uTransformUtlilities
+﻿namespace UniFramework.Utility
 {
-    public static void TransformSnapToGround(this Transform transform, float offset = 0)
+    using UnityEngine;
+
+    public static class uTransformUtlilities
     {
-        RaycastHit hit;
-        Ray ray = new Ray(transform.position, Vector3.down);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        public static void TransformSnapToGround(this Transform transform, float offset = 0)
         {
-            Vector3 position = hit.point;
-            position += Vector3.up * offset;
-            transform.position = position;
+            RaycastHit hit;
+            Ray ray = new Ray(transform.position, Vector3.down);
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                Vector3 position = hit.point;
+                position += Vector3.up * offset;
+                transform.position = position;
+            }
         }
-    }
 
-    public static void RandomiseRotation(this Transform transform, Vector3 minRotation, Vector3 maxRotation)
-    {
-        Vector3 rotation = transform.eulerAngles;
-        rotation.x = Random.Range(minRotation.x, maxRotation.x);
-        rotation.y = Random.Range(minRotation.y, maxRotation.y);
-        rotation.z = Random.Range(minRotation.z, maxRotation.z);
-        transform.eulerAngles = rotation;
-    }
+        public static void RandomiseRotation(this Transform transform, Vector3 minRotation, Vector3 maxRotation)
+        {
+            Vector3 rotation = transform.eulerAngles;
+            rotation.x = Random.Range(minRotation.x, maxRotation.x);
+            rotation.y = Random.Range(minRotation.y, maxRotation.y);
+            rotation.z = Random.Range(minRotation.z, maxRotation.z);
+            transform.eulerAngles = rotation;
+        }
 
+    }
 }

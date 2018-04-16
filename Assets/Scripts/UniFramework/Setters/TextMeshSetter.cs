@@ -1,27 +1,32 @@
-﻿using TMPro;
-using UnityEngine;
+﻿namespace UniFramework.Setters
+{
+    using TMPro;
+    using UniFramework.Variables;
+    using UnityEngine;
 
-[AddComponentMenu("Setter/UI/TextMesh UGUI Setter")]
-public class TextMeshSetter : Setter {
-
-    public ScriptableVariable variable;
-    public TextMeshProUGUI text;
-    public string format;
-
-    public override void Set()
+    [AddComponentMenu("Setter/UI/TextMesh UGUI Setter")]
+    public class TextMeshSetter : Setter
     {
-        if (variable.GetType().ToString() != "StringVariable")
+
+        public ScriptableVariable variable;
+        public TextMeshProUGUI text;
+        public string format;
+
+        public override void Set()
         {
-            try
+            if (variable.GetType().ToString() != "StringVariable")
             {
-                text.SetText(variable.DynamicGet().ToString(format));
+                try
+                {
+                    text.SetText(variable.DynamicGet().ToString(format));
+                }
+                catch (System.Exception)
+                {
+                    text.SetText(variable.DynamicGet().ToString());
+                }
             }
-            catch (System.Exception)
-            {
-                text.SetText(variable.DynamicGet().ToString());
-            }            
-        }            
-        else
-            text.SetText(variable.DynamicGet());
+            else
+                text.SetText(variable.DynamicGet());
+        }
     }
 }
