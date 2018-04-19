@@ -20,10 +20,16 @@
             EditorSceneManager.OpenScene(Application.dataPath + "/Scenes/Menu.unity");
         }
 
-        [MenuItem("Scene/Preload Scene")]
+        [MenuItem("Scene/Preload")]
         public static void Preload()
         {
             EditorSceneManager.OpenScene(Application.dataPath + "/Scenes/_preload.unity");
+        }
+
+        [MenuItem("Scene/Load Scene")]
+        public static void LoadScene()
+        {
+            EditorSceneManager.OpenScene(Application.dataPath + "/Scenes/LoadScene.unity");
         }
 
         //[MenuItem("Scene/Load Next")]
