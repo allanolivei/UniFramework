@@ -1,4 +1,4 @@
-﻿namespace UniFramework.GameEvent
+﻿namespace UniFramework.Events
 {
     using System;
     using System.Collections.Generic;

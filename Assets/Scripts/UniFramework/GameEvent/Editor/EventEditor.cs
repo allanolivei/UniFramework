@@ -1,4 +1,4 @@
-﻿namespace UniFramework.GameEvent
+﻿namespace UniFramework.Events
 {
 #if UNITY_EDITOR
 #if !ODIN_INSPECTOR

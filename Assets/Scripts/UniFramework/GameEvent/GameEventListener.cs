@@ -1,4 +1,4 @@
-﻿namespace UniFramework.GameEvent
+﻿namespace UniFramework.Events
 {
     using UnityEngine;
     using UnityEngine.Events;
