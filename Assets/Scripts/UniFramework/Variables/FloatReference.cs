@@ -20,7 +20,28 @@
 
         public float Value
         {
-            get { return UseConstant ? ConstantValue : Variable.Value; }
+            get
+            {
+                if (UseConstant)
+                {
+                    return ConstantValue;
+                }
+                else
+                {
+                    return Variable.Value;
+                }
+            }
+            set
+            {
+                if (UseConstant)
+                {
+                    ConstantValue = value;
+                }
+                else
+                {
+                    Variable.Value = value;
+                }
+            }
         }
 
         public static implicit operator float(FloatReference reference)
