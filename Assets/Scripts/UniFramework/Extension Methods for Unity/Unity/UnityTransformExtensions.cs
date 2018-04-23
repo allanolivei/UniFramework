@@ -136,6 +136,10 @@ public static class UnityTransformExtensions
     #endregion
 
     #region Reset
+    /// <summary>
+    /// Sets the position, rotation and scale to their default values
+    /// </summary>
+    /// <param name="trans"></param>
     public static void ResetTransform(this Transform trans)
     {
         trans.position = Vector3.zero;
@@ -143,16 +147,28 @@ public static class UnityTransformExtensions
         trans.localScale = new Vector3(1, 1, 1);
     }
 
+    /// <summary>
+    /// Set the position to (0, 0, 0)
+    /// </summary>
+    /// <param name="trans"></param>
     public static void ResetPosition(this Transform trans)
     {
         trans.position = Vector3.zero;
     }
 
+    /// <summary>
+    /// Set the rotation to (0, 0, 0)
+    /// </summary>
+    /// <param name="trans"></param>
     public static void ResetRotation(this Transform trans)
     {
         trans.localRotation = Quaternion.identity;
     }
 
+    /// <summary>
+    /// Set the scale to (1, 1, 1)
+    /// </summary>
+    /// <param name="trans"></param>
     public static void ResetScale(this Transform trans)
     {
         trans.localScale = new Vector3(1, 1, 1);
