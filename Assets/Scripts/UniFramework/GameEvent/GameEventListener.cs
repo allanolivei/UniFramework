@@ -1,5 +1,7 @@
 ﻿namespace UniFramework.Events
 {
+    using System.Collections;
+    using UniFramework.Variables;
     using UnityEngine;
     using UnityEngine.Events;
 
@@ -8,7 +10,9 @@
         [Tooltip("Event to register with.")]
         public GameEvent Event;
 
-        [Tooltip("Response to invoke when Event is raised.")]
+        public FloatReference delay;
+
+        [Tooltip("Response to invoke when Event is invoked.")]
         public UnityEvent Response;
 
         private void OnEnable()
@@ -23,6 +27,15 @@
 
         public void OnEventRaised()
         {
+            if (delay <= 0)
+                Response.Invoke();
+            else
+                StartCoroutine(InvokeAfter(delay));
+        }
+
+        IEnumerator InvokeAfter(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
             Response.Invoke();
         }
 
