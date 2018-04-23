@@ -1,11 +1,16 @@
 ﻿namespace UniFramework.Utility
 {
+    using System.Collections;
+    using UniFramework.Variables;
     using UnityEngine;
     using UnityEngine.Events;
 
     public class EventInvoker : MonoBehaviour
     {
         public UnityEvent unityEvent;
+
+        public IntReference[] delayInt;
+        public FloatReference[] delayFloat;
 
         public bool invokeOnAwake;
         public bool invokeOnStart;
@@ -15,7 +20,7 @@
         {
             if (invokeOnAwake)
             {
-                unityEvent.Invoke();
+                Invoke();
             }
         }
 
@@ -23,7 +28,7 @@
         {
             if (invokeOnStart)
             {
-                unityEvent.Invoke();
+                Invoke();
             }
         }
 
@@ -31,8 +36,35 @@
         {
             if (invokeOnUpdate)
             {
-                unityEvent.Invoke();
+                Invoke();
             }
+        }
+
+        public void Invoke()
+        {
+            float delay = 0;
+
+            foreach (var item in delayInt)
+            {
+                delay += item;
+            }
+            foreach (var item in delayFloat)
+            {
+                delay += item;
+            }
+
+            StartCoroutine(InvokeAfterDelay(delay));
+        }
+
+        public void InvokeIgnoringDelay()
+        {
+            unityEvent.Invoke();
+        }
+
+        private IEnumerator InvokeAfterDelay(float totalDelay)
+        {
+            yield return new WaitForSeconds(totalDelay);
+            unityEvent.Invoke();
         }
     }
 }
