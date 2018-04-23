@@ -1,4 +1,5 @@
-﻿namespace UniFramework.Utility
+﻿#if UNITY_EDITOR
+namespace UniFramework.Utility
 {
     using UnityEngine;
 
@@ -27,3 +28,4 @@
 
     }
 }
+#endif
