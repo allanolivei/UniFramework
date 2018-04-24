@@ -11,8 +11,9 @@
         public GameEvent Event;
 
         public FloatReference delay;
+        public Vector2Reference randomVariance;
 
-        [Tooltip("Response to invoke when Event is invoked.")]
+        [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent Response;
 
         private void OnEnable()
@@ -30,10 +31,10 @@
             if (delay <= 0)
                 Response.Invoke();
             else
-                StartCoroutine(InvokeAfter(delay));
+                StartCoroutine(RaiseAfter(delay.Value + Random.Range(randomVariance.Value.x, randomVariance.Value.y)));
         }
 
-        IEnumerator InvokeAfter(float seconds)
+        IEnumerator RaiseAfter(float seconds)
         {
             yield return new WaitForSeconds(seconds);
             Response.Invoke();
