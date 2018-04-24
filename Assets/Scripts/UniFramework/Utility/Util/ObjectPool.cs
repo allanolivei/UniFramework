@@ -26,20 +26,24 @@
             return true;
         }
 
-        public static void Warm(string id, int amount)
+        public static void Warm(GameObject obj, string id, int amount)
         {
             GameObject[] objs = new GameObject[amount];
             if (pooling.ContainsKey(id))
             {
                 for (int i = 0; i < amount; i++)
                 {
-                    objs[i] = Get(id);
+                    objs[i] = Create(obj);
                     objs[i].SetActive(false);
                 }
                 for (int i = 0; i < amount; i++)
                 {
                     Recycle(id, objs[i]);
                 }
+            }
+            else
+            {
+                Debug.LogError("There is no pool registered with id \" " + id + " \"");
             }
         }
 

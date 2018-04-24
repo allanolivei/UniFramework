@@ -55,6 +55,7 @@
             {
                 if (operation.progress >= 1 || operation.isDone)
                 {
+                    SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(sceneIndex));
                     audioListener.enabled = false;
                 }
 
