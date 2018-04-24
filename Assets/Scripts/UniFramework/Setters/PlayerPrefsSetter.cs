@@ -7,7 +7,7 @@
     using UniFramework.Variables;
     using UnityEngine;
 
-    [AddComponentMenu("Setter/Other/PlayerPrefs Setter")]
+    [AddComponentMenu("Setter/PlayerPrefs/PlayerPrefs Setter")]
     public class PlayerPrefsSetter : Setter
     {
 
