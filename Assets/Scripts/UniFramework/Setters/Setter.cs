@@ -34,6 +34,16 @@
             }
         }
 
+#if ODIN_INSPECTOR && UNITY_EDITOR
+        private bool IsPlaying()
+        {
+            return Application.isPlaying;
+        }
+
+        [Sirenix.OdinInspector.Button(Sirenix.OdinInspector.ButtonSizes.Medium)]
+        [Sirenix.OdinInspector.PropertyOrder(9999)]
+        [Sirenix.OdinInspector.ShowIf("IsPlaying")]
+#endif
         public virtual void Set()
         {
 
