@@ -14,6 +14,7 @@
 
         public bool invokeOnAwake;
         public bool invokeOnStart;
+        public bool invokeOnEnable;
         public bool invokeOnUpdate;
 
         void Awake()
@@ -27,6 +28,14 @@
         void Start()
         {
             if (invokeOnStart)
+            {
+                Invoke();
+            }
+        }
+
+        private void OnEnable()
+        {
+            if (invokeOnEnable)
             {
                 Invoke();
             }
