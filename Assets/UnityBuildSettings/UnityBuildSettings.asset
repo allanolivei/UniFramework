@@ -35,6 +35,7 @@ MonoBehaviour:
         - fileGUID: d4d2299166ec94d44a1ceacbd9a38669
         - fileGUID: 31a5ee6322f51414e95b094cab23207d
         - fileGUID: 85cdf377a62ae404c872bcfbc2e869a3
+        - fileGUID: e036aedd5308eb94a9f446a8ac0f17d0
     - typeName: Test
       bundleIndentifier: com.Company.ProductName
       productName: Product Name
@@ -47,6 +48,7 @@ MonoBehaviour:
         - fileGUID: d4d2299166ec94d44a1ceacbd9a38669
         - fileGUID: 31a5ee6322f51414e95b094cab23207d
         - fileGUID: 85cdf377a62ae404c872bcfbc2e869a3
+        - fileGUID: e036aedd5308eb94a9f446a8ac0f17d0
   _platformList:
     platforms:
     - enabled: 1
