@@ -1,4 +1,4 @@
-﻿namespace UniFramework.Events
+﻿namespace UniFramework.Events.Editor
 {
 #if UNITY_EDITOR && ODIN_INSPECTOR
     using UnityEngine;

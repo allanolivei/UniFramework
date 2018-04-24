@@ -1,4 +1,4 @@
-﻿namespace UniFramework.Utility
+﻿namespace UniFramework.Utility.Editor
 {
 #if UNITY_EDITOR && ODIN_INSPECTOR
     using Sirenix.OdinInspector;

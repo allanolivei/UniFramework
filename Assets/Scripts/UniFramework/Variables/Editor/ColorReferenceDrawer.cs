@@ -1,4 +1,4 @@
-﻿namespace UniFramework.Variables
+﻿namespace UniFramework.Variables.Editor
 {
 #if UNITY_EDITOR
     using UnityEditor;

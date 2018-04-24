@@ -1,4 +1,4 @@
-﻿namespace UniFramework.Utility
+﻿namespace UniFramework.Utility.Editor
 {
     using System.Diagnostics;
 

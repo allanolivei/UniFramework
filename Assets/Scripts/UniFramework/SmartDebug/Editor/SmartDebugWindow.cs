@@ -1,4 +1,4 @@
-﻿namespace UniFramework.SmartDebug
+﻿namespace UniFramework.SmartDebug.Editor
 {
 #if UNITY_EDITOR
     using UnityEditor;
