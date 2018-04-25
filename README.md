@@ -26,6 +26,7 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * [SuperUnityBuild](https://github.com/Chaser324/unity-build) by [Chaser324](https://github.com/Chaser324)
 * [ExtendedTransform](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor) by [bradsc0tt](https://github.com/bradsc0tt/)
 * [Extension Methods for Unity](https://assetstore.unity.com/packages/tools/utilities/extension-methods-for-unity-24876) by [ROCKET GAMES](https://assetstore.unity.com/publishers/2191) and a few additions by me
+* [RangedValues](https://github.com/TobiasWehrum/unity-utilities) by [Tobias Wehrum](https://github.com/TobiasWehrum)
 
 ## Special Thanks
 * [Paullo Cesar "PC"](https://github.com/paullocesarpc)
