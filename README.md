@@ -2,7 +2,7 @@
 
 UniFramework is a personal framework for the games I make (mainly mobile and desktop games). It contains lots of cool stuff I made and scripts/plugins from other people aswell.
 
-*Disclaimer: UniFramework is still in development. Each version upgrade may break a few things, so only upgrade the version of UniFramework in your project if you know what you're doing.
+* Disclaimer: UniFramework is still in development. Each version upgrade may break a few things, so only upgrade the version of UniFramework in your project if you know what you're doing.
 
 ## How To Use
 Download the latest .unitypackage file [from the Packages folder](https://github.com/sampaiodias/UniFramework/tree/master/Packages) and open it on your project. After committing the changes, the next person to pull these changes should import the .unitypackage and commit again (because of DLLs being deleted after the first pull on another machine).
