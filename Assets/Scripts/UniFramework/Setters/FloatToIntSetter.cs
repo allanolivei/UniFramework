@@ -3,7 +3,7 @@
     using UniFramework.Variables;
     using UnityEngine;
 
-    [AddComponentMenu("Setter/Variables/FloatToInt Setter")]
+    [AddComponentMenu("Setter/Variables/Float To Int Setter")]
     public class FloatToIntSetter : Setter
     {
 
