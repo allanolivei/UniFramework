@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 
 /// <summary>
 /// Originally "UnityUtilities" from https://github.com/TobiasWehrum/unity-utilities
@@ -10,3 +11,4 @@ namespace UniFramework.Utility.Editor
     {
     }
 }
+#endif
