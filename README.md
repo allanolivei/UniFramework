@@ -2,7 +2,7 @@
 
 UniFramework is a personal framework for the games I make (mainly mobile and desktop games). It contains lots of cool stuff I made and scripts/plugins from other people aswell.
 
-*Note: projects using UniFramework version 1.0.x should NOT upgrade to 1.1.x or higher due to compatibility issues (new namespaces, renamed classes and variables, etc.) unless you have some time to fix these issues by yourself.*
+*Disclaimer: UniFramework is still in development. Each version upgrade may break a few things, so only upgrade the version of UniFramework in your project if you know what you're doing.
 
 ## How To Use
 Download the latest .unitypackage file [from the Packages folder](https://github.com/sampaiodias/UniFramework/tree/master/Packages) and open it on your project. After committing the changes, the next person to pull these changes should import the .unitypackage and commit again (because of DLLs being deleted after the first pull on another machine).
@@ -19,7 +19,7 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * GameEvent (improved from [Unite Austin 2017 - Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk))
 * UniExplorer and GameEventListener Explorer (requires [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041))
 * UIScreen system by [Allan Oliveira](https://github.com/allanolivei) and me
-* Utility Scripts by me (and a few open-source ones found in various places)
+* Utility scripts by me (and a few open-source ones found in various places)
 * [DOTween](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416) by [Demigiant](http://www.demigiant.com/)
 * [TextMesh Pro](https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126) by [Unity Technologies](https://unity3d.com/)
 * [RainbowFolders](https://github.com/PhannGor/unity3d-rainbow-folders) by [PhannGor](https://github.com/PhannGor)
