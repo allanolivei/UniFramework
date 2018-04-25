@@ -11,7 +11,7 @@ Download the latest .unitypackage file [from the Packages folder](https://github
 * Scripting Runtime .NET 4.x or higher
 * Unity 2017.3 or higher (older versions might work but were not fully tested)
 
-Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) (UniExplorer, bonus features for GameEvent, additional Setters and better inspectors) and UniTween is recommended (but not required).
+Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) (UniExplorer, bonus features for GameEvent, additional Setters and better inspectors) and [UniTween](https://github.com/sampaiodias/UniTween) is recommended (but not required).
 
 ## Contents
 * SmartDebug
