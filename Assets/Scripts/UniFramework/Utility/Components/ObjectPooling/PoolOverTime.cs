@@ -29,6 +29,7 @@
             SceneManager.activeSceneChanged -= OnLevelFinishedLoadingAwake;
             SceneManager.activeSceneChanged -= OnLevelFinishedLoadingStart;
             SceneManager.activeSceneChanged -= OnLevelFinishedLoadingEnable;
+            ObjectPool.Clear(poolID);
         }
 
         void Awake()
