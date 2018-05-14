@@ -888,7 +888,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'PRODUCTION:'
+  m_text: PRODUCTION
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1714977014}
-    characterCount: 11
+    characterCount: 10
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -1045,7 +1045,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'CREATION:'
+  m_text: CREATION
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1849885134}
-    characterCount: 9
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
