@@ -8,7 +8,7 @@
     public class GameEventListener : MonoBehaviour
     {
         [Tooltip("Event to register with.")]
-        public GameEvent Event;
+        public GameEvent[] Events;
 
         public FloatReference delay;
         public Vector2Reference randomVariance;
@@ -18,12 +18,23 @@
 
         private void OnEnable()
         {
-            Event.AddListener(this);
+            if (Events.Length == 0)
+            {
+                Debug.LogWarning($"There are no GameEvents registered on {gameObject.name}'s GameEventListener!");
+            }
+
+            for (int i = 0; i < Events.Length; i++)
+            {
+                Events[i].AddListener(this);
+            }
         }
 
         private void OnDisable()
         {
-            Event.RemoveListener(this);
+            for (int i = 0; i < Events.Length; i++)
+            {
+                Events[i].RemoveListener(this);
+            }
         }
 
         public void OnEventRaised()
@@ -39,15 +50,5 @@
             yield return new WaitForSeconds(seconds);
             Response.Invoke();
         }
-
-#if ODIN_INSPECTOR
-        private string GetButtonName { get { return "Invoke " + Event?.name; } }
-
-        [Sirenix.OdinInspector.Button("$GetButtonName", Sirenix.OdinInspector.ButtonSizes.Large)]
-        public void Invoke()
-        {
-            Event.Invoke();
-        }
-#endif
     }
 }
