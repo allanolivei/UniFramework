@@ -14,10 +14,14 @@
         public GameObject prefab;
         public StringReference poolID;
         public IntReference amountToPool;
+        [Space]
         [Tooltip("Warning: enabling this will make pooling on Start ONLY work if the scene is loaded using Additive mode. Awake and OnEnable work both ways.")]
         public BoolReference poolOnAdditiveScene;
         [Tooltip("You may leave this empty if Pool On Additive Scene is set to false")]
         public StringReference targetSceneName;
+
+        private bool poolOnce = true;
+        private bool pooled;
 
         void OnDestroy()
         {
@@ -29,7 +33,7 @@
 
         void Awake()
         {
-            if (poolOnAwake)
+            if (poolOnAwake && !pooled)
             {
                 if (poolOnAdditiveScene)
                     SceneManager.activeSceneChanged += OnLevelFinishedLoadingAwake;
@@ -40,7 +44,7 @@
 
         void Start()
         {
-            if (poolOnStart)
+            if (poolOnStart && !pooled)
             {
                 if (poolOnAdditiveScene)
                     SceneManager.activeSceneChanged += OnLevelFinishedLoadingStart;
@@ -51,7 +55,7 @@
 
         void OnEnable()
         {
-            if (poolOnEnable)
+            if (poolOnEnable && !pooled)
             {
                 if (poolOnAdditiveScene)
                     SceneManager.activeSceneChanged += OnLevelFinishedLoadingEnable;
@@ -89,7 +93,11 @@
         /// </summary>
         public void Pool()
         {
-            Pool(prefab, poolID, amount: amountToPool);
+            if (!poolOnce || (poolOnce && !pooled))
+            {
+                Pool(prefab, poolID, amount: amountToPool);
+                pooled = true;
+            }
         }
 
         /// <summary>
