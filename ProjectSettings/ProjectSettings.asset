@@ -552,7 +552,7 @@ PlayerSettings:
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
     1: 
-    7: BUILD_TYPE_TEST;BUILD_PLATFORM_ANDROID;BUILD_ARCH_ANDROID
+    7: BUILD_TYPE_TEST;BUILD_PLATFORM_ANDROID;BUILD_ARCH_ANDROID;ODIN_INSPECTOR
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
