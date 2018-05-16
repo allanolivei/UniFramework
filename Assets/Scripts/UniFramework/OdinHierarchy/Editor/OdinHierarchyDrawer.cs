@@ -46,9 +46,15 @@ namespace UniFramework.Utility.Editor
             }
         }
 
+        [MenuItem("Tools/Odin Inspector/Toggle OdinHierarchy")]
+        public static void ToggleOdinHierarchy()
+        {
+            EditorPrefs.SetBool("DisableOdinHierarchy", !EditorPrefs.GetBool("DisableOdinHierarchy"));
+        }
+
         private static void Draw(int id, Rect rect)
         {
-            if (ohsStatic == null || ohsStatic.enabled == false)
+            if (ohsStatic == null || ohsStatic.enabled == false || EditorPrefs.GetBool("DisableOdinHierarchy") == true)
             {
                 return;
             }
