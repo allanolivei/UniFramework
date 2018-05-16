@@ -24,11 +24,11 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * [DOTween](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416) by [Demigiant](http://www.demigiant.com/)
 * [TextMesh Pro](https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126) by [Unity Technologies](https://unity3d.com/)
 * [RainbowFolders](https://github.com/PhannGor/unity3d-rainbow-folders) by [PhannGor](https://github.com/PhannGor)
-* [SuperUnityBuild](https://github.com/Chaser324/unity-build) by [Chaser324](https://github.com/Chaser324)
+* [SuperUnityBuild](https://github.com/Chaser324/unity-build) by [Chaser324](https://github.com/Chaser324) (and a few modifications by me)
 * [ExtendedTransform](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor) by [bradsc0tt](https://github.com/bradsc0tt/)
-* [Extension Methods for Unity](https://assetstore.unity.com/packages/tools/utilities/extension-methods-for-unity-24876) by [ROCKET GAMES](https://assetstore.unity.com/publishers/2191) and a few additions by me
+* [Extension Methods for Unity](https://assetstore.unity.com/packages/tools/utilities/extension-methods-for-unity-24876) by [ROCKET GAMES](https://assetstore.unity.com/publishers/2191) (and a few modifications by me)
 * [RangedValues](https://github.com/TobiasWehrum/unity-utilities) by [Tobias Wehrum](https://github.com/TobiasWehrum)
-* [OdinHierarchy](https://github.com/5argon/E7Unity/tree/master/-EditorScripts/OdinHierarchy) by [5argon/Exceed7](https://github.com/5argon)
+* [OdinHierarchy](https://github.com/5argon/E7Unity/tree/master/-EditorScripts/OdinHierarchy) by [5argon/Exceed7](https://github.com/5argon) (and a few modifications by me)
 
 ## Special Thanks
 * [Paullo Cesar "PC"](https://github.com/paullocesarpc)
