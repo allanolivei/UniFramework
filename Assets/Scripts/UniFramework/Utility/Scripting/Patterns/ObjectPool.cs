@@ -3,25 +3,24 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    //Sistema de pooling por nome e a melhor alternativa;
 
     public static class ObjectPool
     {
-
         public class Pool
         {
             public string id;
             public GameObject prefab;
+            public Transform defaultParent;
             public Queue<GameObject> pooling = new Queue<GameObject>();
             public List<GameObject> used = new List<GameObject>();
         }
 
         public static Dictionary<string, Pool> pooling = new Dictionary<string, Pool>();
 
-        public static bool Register(string id, GameObject prefab)
+        public static bool Register(string id, GameObject prefab, Transform defaultParent = null)
         {
             if (pooling.ContainsKey(id)) return false;
-            Pool p = new Pool() { id = id, prefab = prefab };
+            Pool p = new Pool() { id = id, prefab = prefab, defaultParent = defaultParent };
             pooling.Add(id, p);
             return true;
         }
@@ -78,10 +77,10 @@
         {
             Pool p;
             obj.SetActive(false);
-            obj.transform.SetParent(null);
 
             if (pooling.TryGetValue(id, out p))
             {
+                obj.transform.SetParent(p.defaultParent);
                 p.pooling.Enqueue(obj);
 
                 if (p.used.Contains(obj)) p.used.Remove(obj);
@@ -180,53 +179,4 @@
         public int Length { get { return pool.Count; } }
 
     }
-
-    /*public class ObjectPool<T> where T : MonoBehaviour
-    {
-
-        protected static List<ObjectPool<MonoBehaviour>> pools = new List<ObjectPool<MonoBehaviour>>();
-
-        public static bool Recycle( T obj )
-        {
-            foreach( ObjectPool<MonoBehaviour> )
-            return true;
-        }
-
-
-        public Queue<T> pooling = new Queue<T>();
-        public T prefab;
-
-        public ObjectPool( T prefab, int amount = 0 )
-        {
-            this.prefab = prefab;
-            for( int i = 0; i < amount; i++ )
-                pooling.Enqueue( CreateObject(false) );
-        }
-
-        public int Count
-        {
-            get { return pooling.Count; }
-        }
-
-        public T Get()
-        {
-            T obj = (this.Count > 0) ? pooling.Dequeue() : CreateObject(true);
-            obj.gameObject.SetActive(true);
-            return obj;
-        }
-
-        public void RecycleObject( T obj )
-        {
-            obj.gameObject.SetActive(false);
-            pooling.Enqueue(obj);
-        }
-
-        public T CreateObject( bool isActive )
-        {
-            T obj = MonoBehaviour.Instantiate<T>(prefab);
-            obj.gameObject.SetActive( isActive );
-            return obj;
-        }
-
-    }*/
 }
