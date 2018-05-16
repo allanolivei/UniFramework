@@ -14,13 +14,21 @@
         public GameObject prefab;
         public StringReference poolID;
         public IntReference amountToPool;
-        [Space]
+        [Space(10)]
         [Tooltip("Warning: enabling this will make pooling on Start ONLY work if the scene is loaded using Additive mode. Awake and OnEnable work both ways.")]
-        public BoolReference poolOnAdditiveScene;
+        public bool poolOnAdditiveScene;
         [Tooltip("You may leave this empty if Pool On Additive Scene is set to false")]
+#if ODIN_INSPECTOR
+        [Sirenix.OdinInspector.ShowIf("poolOnAdditiveScene")]
+#endif
         public StringReference targetSceneName;
 
-        private bool poolOnce = true;
+        /// <summary>
+        /// If true, Pooling on Awake, Start or OnEnable will disable automatic pools in the future (for this instance).
+        /// This setting does NOT affect pools called manually using Pool() by other scripts.
+        /// </summary>
+        [HideInInspector]
+        public bool poolOnce = true;
         private bool pooled;
 
         void OnDestroy()
@@ -95,7 +103,7 @@
         {
             if (!poolOnce || (poolOnce && !pooled))
             {
-                Pool(prefab, poolID, amount: amountToPool);
+                Pool(prefab, poolID, transform, amount: amountToPool);
                 pooled = true;
             }
         }
@@ -106,9 +114,9 @@
         /// <param name="prefab"></param>
         /// <param name="id">The id registered to the prefab's ObjectPool</param>
         /// <param name="amount"></param>
-        public static void Pool(GameObject prefab, string id, int amount = 1)
+        public static void Pool(GameObject prefab, string id, Transform defaultParent, int amount = 1)
         {
-            ObjectPool.Register(id, prefab);
+            ObjectPool.Register(id, prefab, defaultParent: defaultParent);
             ObjectPool.Warm(prefab, id, amount);
         }
     }

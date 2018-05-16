@@ -14,15 +14,27 @@
         [Space(10)]
         public GameObject prefab;
         public StringReference poolID;
-        [Tooltip("The name of the scene where this prefab will be pooled")]
-        public StringReference targetSceneName;
-        [Tooltip("Warning: enabling this will make pooling on Start ONLY work if the scene is loaded using Additive mode. Awake and OnEnable will work both ways.")]
-        public BoolReference poolOnAdditiveScene;
-        [Space(10)]
         public IntReference amountPerTick;
         public IntReference ticks;
         public FloatReference interval;
         public FloatReference delay;
+        [Space(10)]
+        [Tooltip("Warning: enabling this will make pooling on Start ONLY work if the scene is loaded using Additive mode. Awake and OnEnable work both ways.")]
+        public bool poolOnAdditiveScene;
+        [Tooltip("You may leave this empty if Pool On Additive Scene is set to false")]
+#if ODIN_INSPECTOR
+        [Sirenix.OdinInspector.ShowIf("poolOnAdditiveScene")]
+#endif
+        public StringReference targetSceneName;
+
+
+        /// <summary>
+        /// If true, pooling on Awake, Start or OnEnable will disable subsequent pools in the future (for this instance).
+        /// This setting does NOT affect pools called manually using Pool() by other scripts.
+        /// </summary>
+        [HideInInspector]
+        public bool poolOnce = true;
+        private bool pooled;
 
         void OnDestroy()
         {
@@ -34,7 +46,7 @@
 
         void Awake()
         {
-            if (poolOnAwake)
+            if (poolOnAwake && !pooled)
             {
                 if (poolOnAdditiveScene)
                     SceneManager.activeSceneChanged += OnLevelFinishedLoadingAwake;
@@ -45,7 +57,7 @@
 
         void Start()
         {
-            if (poolOnStart)
+            if (poolOnStart && !pooled)
             {
                 if (poolOnAdditiveScene)
                     SceneManager.activeSceneChanged += OnLevelFinishedLoadingStart;
@@ -56,7 +68,7 @@
 
         void OnEnable()
         {
-            if (poolOnEnable)
+            if (poolOnEnable && !pooled)
             {
                 if (poolOnAdditiveScene)
                     SceneManager.activeSceneChanged += OnLevelFinishedLoadingEnable;
@@ -94,7 +106,11 @@
         /// </summary>
         public void Pool()
         {
-            Pool(prefab, poolID, interval, ticks, amountPerTick, delay: delay);
+            if (!poolOnce || (poolOnce && !pooled))
+            {
+                Pool(prefab, poolID, transform, interval, ticks, amountPerTick, delay: delay);
+                pooled = true;
+            }
         }
 
         /// <summary>
@@ -106,13 +122,13 @@
         /// <param name="ticks">Amount of spawnings</param>
         /// <param name="spawnAmountPerTick">Amount to be spawned on every interval</param>
         /// <param name="delay">Delay before the first tick</param>
-        public void Pool(GameObject prefab, string id, float interval, int ticks, int spawnAmountPerTick, float delay = 0)
+        public void Pool(GameObject prefab, string id, Transform defaultParent, float interval, int ticks, int spawnAmountPerTick, float delay = 0)
         {
-            ObjectPool.Register(id, prefab);
+            ObjectPool.Register(id, prefab, defaultParent: defaultParent);
             StartCoroutine(WarmOverTime(id, interval, ticks, spawnAmountPerTick, delay));
         }
 
-        IEnumerator WarmOverTime(string id, float interval, int ticks, int spawnAmountPerTick, float delay = 0)
+        private IEnumerator WarmOverTime(string id, float interval, int ticks, int spawnAmountPerTick, float delay = 0)
         {
             yield return new WaitForSeconds(delay);
             WaitForSeconds wait = new WaitForSeconds(interval);
