@@ -73,6 +73,8 @@ namespace UniFramework.Utility.Editor
             [TitleGroup("Matching")]
             public string containsName;
             [TitleGroup("Matching")]
+            public string containsTag;
+            [TitleGroup("Matching")]
             public string scene;
             [TitleGroup("Matching")]
             public string component;
@@ -131,6 +133,7 @@ namespace UniFramework.Utility.Editor
             return items?.FirstOrDefault(s =>
             {
                 bool nameMatch = string.IsNullOrEmpty(s.containsName) || (go.name?.Contains(s.containsName) ?? false);
+                bool tagMatch = string.IsNullOrEmpty(s.containsTag) || (go.name?.Contains(s.containsTag) ?? false);
                 bool sceneMatch = string.IsNullOrEmpty(s.scene) || go.scene.name == s.scene;
 
                 bool isLookingForBase = !string.IsNullOrEmpty(s.component) && s.component.Length > 1 && s.component[0] == '$';
@@ -138,7 +141,7 @@ namespace UniFramework.Utility.Editor
 
                 bool componentMatch = string.IsNullOrEmpty(className) ||
                 go.GetComponents<Component>().Select(c => isLookingForBase ? c?.GetType().BaseType.Name : c?.GetType().Name).Contains(className);
-                bool allEmpty = string.IsNullOrEmpty(s.containsName) && string.IsNullOrEmpty(s.scene) && string.IsNullOrEmpty(s.component);
+                bool allEmpty = string.IsNullOrEmpty(s.containsName) && string.IsNullOrEmpty(s.containsTag) && string.IsNullOrEmpty(s.scene) && string.IsNullOrEmpty(s.component);
 
                 return nameMatch && sceneMatch && componentMatch && !allEmpty;
             });

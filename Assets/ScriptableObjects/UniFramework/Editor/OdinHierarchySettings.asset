@@ -16,6 +16,7 @@ MonoBehaviour:
   baseIconRightPadding: 2
   items:
   - containsName: 
+    containsTag: 
     scene: 
     component: Canvas
     color: {r: 0.35822764, g: 1, b: 0.1397059, a: 1}
@@ -31,6 +32,7 @@ MonoBehaviour:
     decorationType: 3
     decorationColor: {r: 0.015686274, g: 1, b: 0.06320495, a: 0.166}
   - containsName: 
+    containsTag: 
     scene: 
     component: TextMeshProUGUI
     color: {r: 0.35822764, g: 1, b: 0.1397059, a: 1}
@@ -46,6 +48,7 @@ MonoBehaviour:
     decorationType: 0
     decorationColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   - containsName: 
+    containsTag: 
     scene: 
     component: TextMeshPro
     color: {r: 0.35822764, g: 1, b: 0.1397059, a: 1}
@@ -61,6 +64,7 @@ MonoBehaviour:
     decorationType: 0
     decorationColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   - containsName: '---'
+    containsTag: 
     scene: 
     component: 
     color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
