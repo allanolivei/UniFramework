@@ -11,7 +11,7 @@ Download the latest .unitypackage file [from the Packages folder](https://github
 * Scripting Runtime .NET 4.x or higher
 * Unity 2017.3 or higher (older versions might work but were not fully tested)
 
-Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) (UniExplorer, bonus features for GameEvent, additional Setters and better inspectors) and [UniTween](https://github.com/sampaiodias/UniTween) is recommended (but not required).
+Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) (UniExplorer, OdinHierarchy, bonus features for GameEvent, additional Setters and better inspectors) and [UniTween](https://github.com/sampaiodias/UniTween) is recommended (but not required).
 
 ## Contents
 * SmartDebug
@@ -19,7 +19,8 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * GameEvent (improved from [Unite Austin 2017 - Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk))
 * UniExplorer and GameEventListener Explorer (requires [Odin](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041))
 * UIScreen system by [Allan Oliveira](https://github.com/allanolivei) and me
-* Utility scripts by me (and a few open-source ones found in various places)
+* Many utility scripts (ObjectPool, SplashScreen, LoadScreen with ProgressBar, etc.) by me (and a few open-source ones found in various places)
+### Plugins
 * [DOTween](https://assetstore.unity.com/packages/tools/visual-scripting/dotween-pro-32416) by [Demigiant](http://www.demigiant.com/)
 * [TextMesh Pro](https://assetstore.unity.com/packages/essentials/beta-projects/textmesh-pro-84126) by [Unity Technologies](https://unity3d.com/)
 * [RainbowFolders](https://github.com/PhannGor/unity3d-rainbow-folders) by [PhannGor](https://github.com/PhannGor)
@@ -27,6 +28,7 @@ Using UniFramework with [Odin](https://assetstore.unity.com/packages/tools/utili
 * [ExtendedTransform](https://github.com/bradsc0tt/Unity-Extended-Transform-Editor) by [bradsc0tt](https://github.com/bradsc0tt/)
 * [Extension Methods for Unity](https://assetstore.unity.com/packages/tools/utilities/extension-methods-for-unity-24876) by [ROCKET GAMES](https://assetstore.unity.com/publishers/2191) and a few additions by me
 * [RangedValues](https://github.com/TobiasWehrum/unity-utilities) by [Tobias Wehrum](https://github.com/TobiasWehrum)
+* [OdinHierarchy](https://github.com/5argon/E7Unity/tree/master/-EditorScripts/OdinHierarchy) by [5argon/Exceed7](https://github.com/5argon)
 
 ## Special Thanks
 * [Paullo Cesar "PC"](https://github.com/paullocesarpc)
