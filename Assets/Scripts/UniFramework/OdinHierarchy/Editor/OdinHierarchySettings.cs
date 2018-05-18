@@ -1,6 +1,6 @@
 namespace UniFramework.Utility.Editor
 {
-#if ODIN_INSPECTOR
+#if ODIN_INSPECTOR && UNITY_EDITOR
     /// <summary>
     /// Odin Hierarchy
     /// Sirawat Pitaksarit / 5argon
@@ -143,7 +143,7 @@ namespace UniFramework.Utility.Editor
                 go.GetComponents<Component>().Select(c => isLookingForBase ? c?.GetType().BaseType.Name : c?.GetType().Name).Contains(className);
                 bool allEmpty = string.IsNullOrEmpty(s.containsName) && string.IsNullOrEmpty(s.containsTag) && string.IsNullOrEmpty(s.scene) && string.IsNullOrEmpty(s.component);
 
-                return nameMatch && sceneMatch && componentMatch && !allEmpty;
+                return nameMatch && tagMatch && sceneMatch && componentMatch && !allEmpty;
             });
         }
 
