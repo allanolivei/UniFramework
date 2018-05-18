@@ -8,6 +8,7 @@
 
         public bool setOnAwake;
         public bool setOnStart;
+        public bool setOnEnable;
         public bool setOnUpdate;
 
         void Awake()
@@ -21,6 +22,14 @@
         void Start()
         {
             if (setOnStart)
+            {
+                Set();
+            }
+        }
+
+        private void OnEnable()
+        {
+            if (setOnEnable)
             {
                 Set();
             }
